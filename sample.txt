@@ -2,3 +2,12 @@
 스타트 캠프입니다.
 내용
 내용 추가
+
+echo "# startcamp01" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin https://github.com/bingo4s/startcamp01.git
+git push -u origin master
+
