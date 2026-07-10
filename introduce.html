@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>이상은 | SSAFY 자기소개</title>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --main-blue: #2563eb;
+      --dark-blue: #1e3a8a;
+      --light-blue: #eff6ff;
+      --purple: #7c3aed;
+      --text-dark: #172033;
+      --text-gray: #64748b;
+      --white: #ffffff;
+    }
+
+    body {
+      min-height: 100vh;
+      padding: 50px 20px;
+      font-family: "Noto Sans KR", sans-serif;
+      color: var(--text-dark);
+      background:
+        radial-gradient(circle at top left, #dbeafe 0, transparent 35%),
+        radial-gradient(circle at bottom right, #ede9fe 0, transparent 35%),
+        linear-gradient(135deg, #f8fafc, #eef2ff);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1050px;
+      margin: 0 auto;
+      overflow: hidden;
+      background-color: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 30px;
+      box-shadow: 0 25px 70px rgba(30, 64, 175, 0.15);
+      animation: appear 0.7s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* 상단 소개 영역 */
+    .top-banner {
+      position: relative;
+      padding: 65px 50px;
+      overflow: hidden;
+      color: white;
+      background: linear-gradient(135deg, #1d4ed8, #4f46e5, #7c3aed);
+    }
+
+    .top-banner::before,
+    .top-banner::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .top-banner::before {
+      width: 230px;
+      height: 230px;
+      top: -100px;
+      right: -50px;
+    }
+
+    .top-banner::after {
+      width: 150px;
+      height: 150px;
+      bottom: -80px;
+      left: 40%;
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .small-title {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      background-color: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+    }
+
+    .top-banner h1 {
+      margin-bottom: 14px;
+      font-size: 46px;
+      line-height: 1.25;
+    }
+
+    .top-banner h1 span {
+      color: #fde68a;
+    }
+
+    .top-banner p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    /* 본문 */
+    .content {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 30px;
+      padding: 40px;
+    }
+
+    /* 왼쪽 프로필 카드 */
+    .profile-card {
+      padding: 32px 25px;
+      text-align: center;
+      color: white;
+      background: linear-gradient(160deg, #1e3a8a, #312e81);
+      border-radius: 24px;
+      box-shadow: 0 15px 35px rgba(30, 58, 138, 0.2);
+    }
+
+    .profile-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 22px;
+      font-size: 52px;
+      background-color: rgba(255, 255, 255, 0.15);
+      border: 3px solid rgba(255, 255, 255, 0.35);
+      border-radius: 50%;
+    }
+
+    .profile-card h2 {
+      margin-bottom: 22px;
+      font-size: 29px;
+    }
+
+    .profile-info {
+      padding: 18px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .profile-info p {
+      margin: 8px 0;
+      font-size: 14px;
+      color: #dbeafe;
+    }
+
+    .message {
+      margin-top: 22px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #dbeafe;
+    }
+
+    /* 오른쪽 카드 영역 */
+    .details {
+      display: grid;
+      gap: 20px;
+    }
+
+    .card {
+      padding: 27px 30px;
+      background-color: var(--white);
+      border: 1px solid #e2e8f0;
+      border-radius: 22px;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #bfdbfe;
+      box-shadow: 0 15px 30px rgba(37, 99, 235, 0.12);
+    }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .icon-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      flex-shrink: 0;
+      font-size: 23px;
+      background-color: var(--light-blue);
+      border-radius: 14px;
+    }
+
+    .card-title h3 {
+      font-size: 21px;
+      color: var(--dark-blue);
+    }
+
+    .goal-title {
+      margin-bottom: 18px;
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    /* 학기별 목표 */
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 17px;
+      padding-left: 18px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 9px;
+      bottom: 9px;
+      left: 4px;
+      width: 3px;
+      background: linear-gradient(var(--main-blue), var(--purple));
+      border-radius: 10px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 16px 18px;
+      background-color: #f8fafc;
+      border-radius: 14px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 21px;
+      left: -20px;
+      width: 11px;
+      height: 11px;
+      background-color: var(--main-blue);
+      border: 3px solid white;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px #bfdbfe;
+    }
+
+    .timeline-item strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 15px;
+      color: var(--main-blue);
+    }
+
+    .timeline-item p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #475569;
+    }
+
+    /* 알고리즘 수준 */
+    .level-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 18px;
+      background: linear-gradient(135deg, #eff6ff, #f5f3ff);
+      border-radius: 16px;
+    }
+
+    .level-badge {
+      flex-shrink: 0;
+      padding: 10px 15px;
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+      background: linear-gradient(135deg, var(--main-blue), var(--purple));
+      border-radius: 999px;
+    }
+
+    .level-info p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #475569;
+    }
+
+    .programmers-level {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 7px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #4338ca;
+      background-color: white;
+      border: 1px solid #c7d2fe;
+      border-radius: 999px;
+    }
+
+    /* 취미 */
+    .hobby-content {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+    }
+
+    .fencing-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 85px;
+      height: 85px;
+      flex-shrink: 0;
+      font-size: 43px;
+      background: linear-gradient(135deg, #dbeafe, #ede9fe);
+      border-radius: 20px;
+    }
+
+    .hobby-info h4 {
+      margin-bottom: 9px;
+      font-size: 21px;
+      color: #312e81;
+    }
+
+    .hobby-info ul {
+      padding-left: 20px;
+      color: #475569;
+    }
+
+    .hobby-info li {
+      margin: 6px 0;
+      line-height: 1.6;
+    }
+
+    footer {
+      padding: 23px;
+      text-align: center;
+      font-size: 15px;
+      color: var(--text-gray);
+      background-color: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    /* 태블릿 화면 */
+    @media (max-width: 800px) {
+      .top-banner {
+        padding: 45px 28px;
+      }
+
+      .top-banner h1 {
+        font-size: 35px;
+      }
+
+      .content {
+        grid-template-columns: 1fr;
+        padding: 25px;
+      }
+
+      .profile-card {
+        padding: 28px 20px;
+      }
+    }
+
+    /* 모바일 화면 */
+    @media (max-width: 520px) {
+      body {
+        padding: 15px;
+      }
+
+      .container {
+        border-radius: 22px;
+      }
+
+      .top-banner h1 {
+        font-size: 30px;
+      }
+
+      .top-banner p {
+        font-size: 15px;
+      }
+
+      .content {
+        padding: 18px;
+      }
+
+      .card {
+        padding: 23px 20px;
+      }
+
+      .level-box,
+      .hobby-content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <!-- 상단 자기소개 -->
+    <header class="top-banner">
+      <div class="banner-content">
+
+        <span class="small-title">
+          SSAFY 1학기 자기소개
+        </span>
+
+        <h1>
+          안녕하세요,<br />
+          <span>이상은</span>입니다.
+        </h1>
+
+        <p>
+          꾸준히 배우고 다양한 경험을 쌓아<br />
+          실무 역량을 갖춘 개발자로 성장하고 싶습니다.
+        </p>
+
+      </div>
+    </header>
+
+    <section class="content">
+
+      <!-- 이름 및 기본 정보 -->
+      <aside class="profile-card">
+
+        <div class="profile-icon">
+          👩‍💻
+        </div>
+
+        <h2>이상은</h2>
+
+        <div class="profile-info">
+          <p>🎓 2026년 8월 졸업 예정</p>
+          <p>🎂 2002년생</p>
+        </div>
+
+        <p class="message">
+          꾸준한 학습과 프로젝트 경험을 통해<br />
+          실무 역량을 갖춘 개발자로 성장하겠습니다.
+        </p>
+
+      </aside>
+
+      <div class="details">
+
+        <!-- 목표 -->
+        <article class="card">
+
+          <div class="card-title">
+            <div class="icon-box">🎯</div>
+            <h3>목표</h3>
+          </div>
+
+          <p class="goal-title">
+            SSAFY 수료 후 취업
+          </p>
+
+          <div class="timeline">
+
+            <div class="timeline-item">
+              <strong>1학기</strong>
+
+              <p>
+                알고리즘과 Java를 학습하며
+                개발 기초 역량을 탄탄히 쌓고 싶습니다.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <strong>2학기</strong>
+
+              <p>
+                프로젝트를 통해 실무 경험과 협업 역량을 키워
+                취업하는 것이 목표입니다.
+              </p>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- 알고리즘 수준 -->
+        <article class="card">
+
+          <div class="card-title">
+            <div class="icon-box">💻</div>
+            <h3>알고리즘 수준</h3>
+          </div>
+
+          <div class="level-box">
+
+            <span class="level-badge">
+              기초 단계
+            </span>
+
+            <div class="level-info">
+              <p>
+                알고리즘 문제 풀이 경험은 많지 않습니다.<br />
+                SSAFY에서 꾸준히 학습하며 문제 해결 능력을
+                키우고 싶습니다.
+              </p>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- 취미 -->
+        <article class="card">
+
+          <div class="card-title">
+            <div class="icon-box">🤺</div>
+            <h3>취미</h3>
+          </div>
+
+          <div class="hobby-content">
+
+            <div class="fencing-icon">
+              🤺
+            </div>
+
+            <div class="hobby-info">
+
+              <h4>펜싱</h4>
+
+              <ul>
+                <li>고등학교·대학교 펜싱 동아리 활동</li>
+                <li>전국 대회 입상 경험</li>
+              </ul>
+
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <footer>
+      앞으로 잘 부탁드립니다!
+    </footer>
+
+  </main>
+</body>
+</html>
